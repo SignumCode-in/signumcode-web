@@ -51,7 +51,7 @@ export function CTA() {
                             </Link>
                         </Button>
                         <Button size="lg" variant="outline" className="h-14 px-10 text-lg rounded-full border-2" asChild>
-                            <Link href="https://wa.me/something" target="_blank" className="gap-2">
+                            <Link href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=Hi%20SignumCode%2C%20I%27m%20reaching%20out%20from%20your%20website.%20I%27d%20like%20to%20discuss%20a%20project.`} target="_blank" className="gap-2">
                                 WhatsApp Us
                                 <MessageSquare className="w-5 h-5" />
                             </Link>

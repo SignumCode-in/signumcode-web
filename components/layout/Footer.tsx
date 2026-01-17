@@ -78,10 +78,18 @@ export function Footer() {
                 {/* Contact Strip */}
                 <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
                     <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
-                        <div className="flex items-center gap-2">
+                        <Link href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`} className="flex items-center gap-2 hover:text-primary transition-colors">
                             <Mail className="w-4 h-4 text-primary" />
-                            <span>info@signumcode.in</span>
-                        </div>
+                            <span>{process.env.NEXT_PUBLIC_CONTACT_EMAIL}</span>
+                        </Link>
+                        <Link
+                            href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=Hi%20SignumCode%2C%20I%27m%20reaching%20out%20from%20your%20website.%20I%27d%20like%20to%20discuss%20a%20project.`}
+                            target="_blank"
+                            className="flex items-center gap-2 hover:text-primary transition-colors"
+                        >
+                            <Phone className="w-4 h-4 text-primary" />
+                            <span>+{process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}</span>
+                        </Link>
                         <div className="flex items-center gap-2">
                             <MapPin className="w-4 h-4 text-primary" />
                             <span>Noida, India | Global</span>

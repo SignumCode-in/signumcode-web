@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/Button";
@@ -84,24 +85,31 @@ export default function ContactPage() {
                         </motion.p>
 
                         <div className="space-y-8">
-                            <div className="flex items-center gap-6">
+                            <Link
+                                href={`mailto:${process.env.NEXT_PUBLIC_CONTACT_EMAIL}`}
+                                className="flex items-center gap-6 hover:opacity-80 transition-opacity"
+                            >
                                 <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
                                     <Mail className="w-6 h-6" />
                                 </div>
                                 <div>
                                     <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Email Us</p>
-                                    <p className="font-outfit font-bold text-lg">info@signumcode.in</p>
+                                    <p className="font-outfit font-bold text-lg">{process.env.NEXT_PUBLIC_CONTACT_EMAIL}</p>
                                 </div>
-                            </div>
-                            <div className="flex items-center gap-6">
+                            </Link>
+                            <Link
+                                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}?text=Hi%20SignumCode%2C%20I%27m%20reaching%20out%20from%20your%20website.%20I%27d%20like%20to%20discuss%20a%20project.`}
+                                target="_blank"
+                                className="flex items-center gap-6 hover:opacity-80 transition-opacity"
+                            >
                                 <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center shrink-0">
                                     <MessageSquare className="w-6 h-6" />
                                 </div>
                                 <div>
                                     <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">WhatsApp (India)</p>
-                                    <p className="font-outfit font-bold text-lg">+91-999-000-0000</p>
+                                    <p className="font-outfit font-bold text-lg">+{process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}</p>
                                 </div>
-                            </div>
+                            </Link>
                             <div className="flex items-center gap-6">
                                 <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-500 flex items-center justify-center shrink-0">
                                     <MapPin className="w-6 h-6" />

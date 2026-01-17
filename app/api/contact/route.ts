@@ -19,7 +19,7 @@ export async function POST(req: Request) {
 
     const mailOptions = {
       from: `"SignumCode Contact Form" <${process.env.SMTP_USER}>`,
-      to: "info@signumcode.in", // Recipient email
+      to: process.env.NEXT_PUBLIC_CONTACT_EMAIL, // Recipient email
       subject: `New Lead: ${name} from ${company || "New Client"}`,
       text: `
         Name: ${name}
